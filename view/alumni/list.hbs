@@ -1,0 +1,47 @@
+<div></div>
+<header class="masthead mb-auto">
+    <div class="inner">
+        <h3 class="masthead-brand">LIST DAFTAR ALUMNI</h3>
+        <hr>
+        <nav class="nav nav-masthead justify-content-center">
+            <a class="btn btn-outline-secondary" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
+            <a class="btn btn-outline-success" href="/data"><i class="fa fa-user-plus fa-lg" aria-hidden="true"></i> Tambah Data</a>
+        </nav>
+    </div>
+</header>
+<br>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Tempat, Tanggal Lahir</th>
+                <th>Jurusan</th>
+                <th>Tahun Masuk</th>
+                <th>Tahun Selesai</th>
+                <th>IPK</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.NIM}}</td>
+                <td>{{this.nama}}</td>
+                <td>{{this.jk}}</td>
+                <td>{{this.tempat_lahir}} {{this.tgl_lahir}}</td>
+                <td>{{this.jurusan}}</td>
+                <td>{{this.tahun_masuk}}</td>
+                <td>{{this.tahun_keluar}}</td>
+                <td>{{this.IPK}}</td>
+                <td>
+                    <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

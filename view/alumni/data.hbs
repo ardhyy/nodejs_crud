@@ -1,0 +1,63 @@
+<h2>{{titlenya}}</h2>
+
+<form action="/data" method="POST" autocomplete="off">
+<input name="_id" value="{{alumni._id}}" type="hidden">
+    <div class="form-group">
+        <label>NIM</label>
+        <input class="form-control" placeholder="example: 243XXXXX" name="NIM" id="NIM" value="{{alumni.NIM}}" required>
+    </div>
+    <div class="form-group">
+        <label>Nama</label>
+        <input type="text" class="form-control" name="nama" placeholder="Masukkan nama Anda..." value="{{alumni.nama}}" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-3">
+            <label for="jk">Jenis Kelamin</label>
+            <div class="custom-control custom-radio">
+                <input type="radio" name="jk" id="jk1" class="custom-control-input" value="Laki-laki">
+                <label class="custom-control-label" for="jk1" name="jk">Laki-laki</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="jk2" name="jk" class="custom-control-input" value="Perempuan">
+                <label class="custom-control-label" for="jk2" name="jk">Perempuan</label>
+            </div>
+        </div>
+        <div class="form-group col-md-5">
+            <label>Tempat Lahir</label>
+            <input type="text" class="form-control" name="tempat_lahir" placeholder="example: makassar" value="{{alumni.tempat_lahir}}" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Tanggal Lahir</label>
+            <input class="form-control" type="date" id="tgl_lahir" name="tgl_lahir" value="{{alumni.tgl_lahir}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Jurusan</label>
+        <select class="form-control" name="jurusan" id="jurusan">
+            <option>--Pilih--</option>
+            <option>Teknik Informatika</option>
+            <option>Sistem Komputer</option>
+            <option>Sistem Informasi</option>
+            <option>Manajemen Informatika</option>
+            <option>Akuntansi Komputer</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Tahun Masuk</label>
+            <input type="text" class="form-control" name="tahun_masuk" placeholder="example: 20XX" value="{{alumni.tahun_masuk}}" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Tahun Keluar</label>
+            <input type="text" class="form-control" name="tahun_keluar" placeholder="example: 20XX" value="{{alumni.tahun_keluar}}" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label>IPK</label>
+            <input type="text" class="form-control" name="IPK" placeholder="example: 2.00" value="{{alumni.IPK}}" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-danger" href="/list"><i class="fa fa-list-alt"></i> View List</a>
+    </div>
+</form>
